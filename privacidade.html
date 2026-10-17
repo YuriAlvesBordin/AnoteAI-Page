@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade — AnoteAI</title>
+  <meta name="description" content="Política de Privacidade do AnoteAI: como o aplicativo trata suas notas, sua conta Google e os dados enviados aos provedores de IA." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230071E3'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="./">
+        <span class="brand-mark">A</span>
+        <span>Anote<span class="brand-ai">AI</span></span>
+      </a>
+      <nav>
+        <a href="./">Início</a>
+        <a href="termos.html">Termos de Uso</a>
+        <a href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="doc wrap narrow">
+      <p class="eyebrow">Documento legal</p>
+      <h1>Política de Privacidade</h1>
+      <p class="doc-meta">AnoteAI · Última atualização: 17 de outubro de 2026</p>
+
+      <p>
+        O AnoteAI é um aplicativo desktop local para organizar notas curtas. Esta
+        política explica, em linguagem direta, quais dados o aplicativo trata, onde
+        eles ficam e com quem são compartilhados.
+      </p>
+
+      <h2>1. Resumo em uma frase</h2>
+      <p>
+        Suas notas ficam no seu computador; o AnoteAI não tem servidores, não coleta
+        telemetria e só envia dados para serviços externos (Google ou o provedor de IA
+        que você escolher) quando você usa uma função que depende deles.
+      </p>
+
+      <h2>2. Dados que ficam no seu computador</h2>
+      <ul>
+        <li><strong>Notas</strong> — gravadas em arquivos YAML em <code>Documentos/AnoteAI/notas/</code>, com histórico de alterações e lixeira, gerenciados pelo próprio aplicativo com Git local.</li>
+        <li><strong>Cópias de segurança locais</strong> — criadas somente quando você pede, dentro de <code>Documentos/AnoteAI/Backups/</code>.</li>
+        <li><strong>Credenciais</strong> — a chave de API do provedor de IA e o token de renovação da conta Google ficam no <strong>chaveiro do sistema</strong> do seu sistema operacional. Nenhum segredo é gravado em arquivo pelo aplicativo nem transmitido para os desenvolvedores.</li>
+        <li><strong>Preferências</strong> — tema, idioma e outras opções, em arquivo local sem dados sensíveis.</li>
+        <li><strong>Voz</strong> — a transcrição pode acontecer localmente (whisper.cpp) ou no serviço de IA configurado, conforme sua escolha nas preferências.</li>
+      </ul>
+
+      <h2>3. Conta Google</h2>
+      <p>
+        O AnoteAI solicita o login com uma conta Google e esse login é
+        <strong>obrigatório</strong> para usar o aplicativo. O fluxo é o OAuth 2.0
+        oficial do Google (com PKCE), realizado no navegador do seu sistema; o
+        aplicativo nunca vê nem armazena sua senha. Os escopos solicitados e o uso de
+        cada um:
+      </p>
+      <ul>
+        <li><code>openid</code>, <code>email</code> e <code>profile</code> — identificar e exibir a conta conectada (nome, e-mail e foto dentro do aplicativo).</li>
+        <li><code>https://www.googleapis.com/auth/drive.file</code> — criar, listar e baixar os zips de cópia de segurança das suas notas em uma pasta “AnoteAI” no <em>seu</em> Google Drive. Por esse escopo, o AnoteAI só tem acesso aos arquivos que ele mesmo criou.</li>
+        <li><code>https://www.googleapis.com/auth/calendar.events</code> — criar e atualizar eventos de dia inteiro na sua agenda principal a partir de lembretes das suas notas (quando você pede) e listar os próximos eventos para exibir no painel de lembretes.</li>
+        <li><code>https://www.googleapis.com/auth/contacts.readonly</code> — ler a lista dos seus contatos apenas quando você usa a função “Importar contatos”; somente os contatos que você selecionar viram notas locais.</li>
+      </ul>
+      <p>
+        O token de acesso fica apenas na memória do aplicativo e é renovado com o
+        token de renovação guardado no chaveiro do sistema. Ao usar “Sair da conta”,
+        o AnoteAI revoga o token no Google e apaga os dados locais da sessão.
+      </p>
+
+      <h2>4. Dados enviados ao Google</h2>
+      <p>O AnoteAI comunica-se com o Google somente quando você usa uma destas funções:</p>
+      <ul>
+        <li><strong>Cópia de segurança no Drive</strong> — envia o zip das suas notas e mantém as 10 cópias mais recentes; restauração baixa a cópia escolhida.</li>
+        <li><strong>Agenda</strong> — cria/atualiza o evento do lembrete escolhido (título, data e a nota de origem na descrição) e lê os próximos eventos para exibir no painel.</li>
+        <li><strong>Importação de contatos</strong> — lê os contatos para você escolher quais importar.</li>
+      </ul>
+      <p>
+        O AnoteAI <strong>não</strong> compartilha esses dados com terceiros, não os
+        usa para treinamento de modelos, não os vende e não os transfere para fins de
+        publicidade.
+      </p>
+
+      <h2>5. Uso limitado dos dados do Google</h2>
+      <p>
+        O AnoteAI adere à <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Política de Dados do Usuário dos Serviços de API do Google</a>
+        (Limited Use), incluindo os requisitos de: acesso limitado ao que a função
+        pede, nenhuma transferência para terceiros sem finalidade compatível, nenhum
+        uso para publicidade e nenhuma venda de dados. Humanos não leem o conteúdo
+        das suas notas, contatos ou eventos por meio do AnoteAI.
+      </p>
+
+      <h2>6. Provedores de IA (além do Google)</h2>
+      <p>
+        Para conversar com a IA, você conecta um provedor (OpenAI, Anthropic, Google
+        Gemini, OpenRouter, NVIDIA, Ollama, LM Studio ou outro compatível). Ao enviar
+        uma mensagem, o conteúdo necessário da conversa — incluindo trechos das suas
+        notas — é enviado ao provedor escolhido para gerar a resposta. O tratamento
+        desses dados segue a política do provedor. Para que nada saia do computador,
+        o AnoteAI aceita modelos locais (Ollama/LM Studio).
+      </p>
+
+      <h2>7. O que o AnoteAI não faz</h2>
+      <ul>
+        <li>Não coleta telemetria, métricas de uso nem dados analíticos.</li>
+        <li>Não exibe anúncios e não vende dados.</li>
+        <li>Não mantém servidores; não há conta “AnoteAI”, cadastro ou sincronização própria.</li>
+        <li>Não acessa suas notas, contatos ou eventos remotamente — não há como os desenvolvedores lerem seu conteúdo.</li>
+      </ul>
+
+      <h2>8. Retenção e exclusão</h2>
+      <ul>
+        <li><strong>Notas e cópias locais</strong> — permanecem até você apagá-las; apagar uma nota a move para a lixeira local e o histórico Git guarda o estado anterior.</li>
+        <li><strong>Cópias no Drive</strong> — o aplicativo mantém as 10 mais recentes; você pode apagá-las a qualquer momento no seu próprio Google Drive.</li>
+        <li><strong>Conta Google</strong> — “Sair da conta” revoga o token e apaga os dados da sessão; você também pode revogar o acesso em <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</li>
+        <li><strong>Desinstalar</strong> — apagar a pasta <code>Documentos/AnoteAI/</code> remove todas as notas e dados locais do aplicativo.</li>
+      </ul>
+
+      <h2>9. Segurança</h2>
+      <p>
+        Segredos ficam no chaveiro do sistema operacional; a comunicação com o Google
+        e com os provedores usa HTTPS; a restauração de cópias valida todos os
+        caminhos antes de escrever qualquer arquivo. As notas não são criptografadas
+        em disco — proteja o computador com o login do sistema.
+      </p>
+
+      <h2>10. Crianças</h2>
+      <p>
+        O AnoteAI não é direcionado a menores de 13 anos e não coleta dados
+        conscientemente desse público.
+      </p>
+
+      <h2>11. Mudanças nesta política</h2>
+      <p>
+        Mudanças relevantes serão publicadas nesta página com nova data de
+        atualização. Mudanças no uso dos dados da conta Google serão comunicadas
+        dentro do aplicativo antes de solicitarem nova autorização.
+      </p>
+
+      <h2>12. Contato</h2>
+      <p>
+        Dúvidas sobre esta política: abra uma issue em
+        <a href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">github.com/YuriAlvesBordin/AnoteAI/issues</a>
+        ou escreva para o e-mail de suporte informado na tela de consentimento do
+        Google.
+      </p>
+
+      <hr />
+
+      <h2>Privacy Policy — English summary</h2>
+      <p>
+        AnoteAI is a local-first desktop note app. Notes live only on your computer
+        (YAML files with local Git history). The app does not operate servers and
+        collects no telemetry. Google sign-in (OAuth 2.0/PKCE) is required to use the
+        app and is used solely for: backing up/restoring your notes as zips in your
+        own Google Drive folder (<code>drive.file</code> — app-created files only),
+        creating calendar events from your notes' reminders and reading upcoming
+        events (<code>calendar.events</code>), and reading your contacts only when
+        you choose to import them (<code>contacts.readonly</code>). Basic profile
+        scopes identify the signed-in account. The refresh token is stored in the OS
+        keyring; signing out revokes it. AnoteAI complies with the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy (Limited Use)</a>,
+        including not transferring Google user data to third parties, not using it
+        for advertising, and never selling it. AI chat content is sent only to the
+        AI provider you configure (a local model option keeps everything on your
+        machine). You can revoke access any time at
+        <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.
+        Contact: the repository's issue tracker linked above.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 AnoteAI · <a href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">Código no GitHub</a></span>
+      <span>
+        <a href="./">Início</a> ·
+        <a href="termos.html">Termos de Uso</a> ·
+        <a href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">Contato</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnoteAI — Um lugar para lembrar</title>
+  <meta name="description" content="AnoteAI é um aplicativo desktop local para organizar as notas curtas da sua vida — pessoas, lugares, eventos, projetos e ideias — conversando com a IA que você escolher." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230071E3'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="./">
+        <span class="brand-mark">A</span>
+        <span>Anote<span class="brand-ai">AI</span></span>
+      </a>
+      <nav>
+        <a href="./#conta-google">Conta Google</a>
+        <a href="./#privacidade">Privacidade</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Um lugar para lembrar</p>
+        <h1>Anote<span class="brand-ai">AI</span></h1>
+        <p class="lead">
+          As notas curtas da sua vida — pessoas, lugares, eventos, projetos e ideias —
+          em um só lugar, ligadas num grafo. Você conversa, o AnoteAI guarda, lembra
+          e conecta tudo.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">Ver o projeto no GitHub</a>
+          <a class="button ghost" href="./#conta-google">Como usamos sua conta Google</a>
+        </div>
+        <p class="hero-note">Aplicativo desktop para Linux, macOS e Windows · Tauri v2 (Rust + React)</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap grid">
+        <article class="card">
+          <h2>Anote conversando</h2>
+          <p>Diga à IA o que quer lembrar — “a consulta da Ana é dia 30”. Ela cria a nota, guarda os campos e liga com o que já existe.</p>
+        </article>
+        <article class="card">
+          <h2>Tudo ligado num grafo</h2>
+          <p>Pessoas, lugares e eventos aparecem como nós conectados. Busque, clique e navegue pelas relações das suas notas.</p>
+        </article>
+        <article class="card">
+          <h2>Lembretes que nascem das notas</h2>
+          <p>Datas nas notas viram lembretes: atrasados, hoje, esta semana e aniversários que voltam todo ano — na sua Agenda do Google também.</p>
+        </article>
+        <article class="card">
+          <h2>Só seu</h2>
+          <p>As notas ficam numa pasta do seu computador, em YAML, com histórico e cópias de segurança. Sem telemetria, sem anúncios.</p>
+        </article>
+        <article class="card">
+          <h2>Com a IA que você escolher</h2>
+          <p>OpenAI, Anthropic, Gemini, OpenRouter, NVIDIA ou um modelo local (Ollama, LM Studio) para privacidade total.</p>
+        </article>
+        <article class="card">
+          <h2>Cópia de segurança no Drive</h2>
+          <p>Com a conta Google conectada, um zip das suas notas é guardado na sua própria pasta “AnoteAI” do Google Drive.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="google" id="conta-google">
+      <div class="wrap narrow">
+        <h2>Por que pedimos sua conta Google</h2>
+        <p>
+          O login com a conta Google é <strong>obrigatório</strong> para usar o AnoteAI.
+          É ele que habilita a cópia de segurança no Drive, os lembretes na sua Agenda
+          e a importação dos seus contatos. O login acontece no navegador do seu sistema,
+          com o fluxo oficial do Google (OAuth 2.0 com PKCE).
+        </p>
+        <ul class="scopes">
+          <li><strong>Perfil básico</strong> (openid, email, perfil) — para mostrar quem está conectado.</li>
+          <li><strong>Drive (arquivos criados pelo app)</strong> — guardar e restaurar as cópias de segurança das suas notas. O app só enxerga os arquivos que ele mesmo criou no seu Drive.</li>
+          <li><strong>Agenda (eventos)</strong> — criar e atualizar eventos a partir dos lembretes das suas notas, e mostrar os próximos compromissos no painel do app.</li>
+          <li><strong>Contatos (somente leitura)</strong> — importar contatos que você escolher como notas de pessoas.</li>
+        </ul>
+        <p>
+          O AnoteAI só fala com o Google quando você usa uma dessas funções. O token de
+          renovação fica no chaveiro do sistema do seu computador — nunca em servidores
+          nossos (não existem servidores nossos). Você pode revogar o acesso quando quiser
+          em <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>
+          ou clicando em “Sair da conta” dentro do app.
+        </p>
+      </div>
+    </section>
+
+    <section class="privacy-strip" id="privacidade">
+      <div class="wrap narrow">
+        <h2>Privacidade em primeiro lugar</h2>
+        <p>
+          Suas notas vivem no seu computador, não na nuvem de ninguém. Nada é enviado
+          sem uma ação sua: nem telemetria, nem análise de uso, nem propaganda.
+          Ao conversar com a IA, apenas o conteúdo necessário da conversa vai para o
+          provedor que você escolheu — e você pode usar um modelo local para que nada
+          saia do computador.
+        </p>
+        <p><a class="button ghost" href="privacidade.html">Ler a Política de Privacidade</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 AnoteAI · <a href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">Código no GitHub</a></span>
+      <span>
+        <a href="privacidade.html">Política de Privacidade</a> ·
+        <a href="termos.html">Termos de Uso</a> ·
+        <a href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">Contato</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
