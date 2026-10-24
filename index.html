@@ -3,110 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AnoteAI — Um lugar para lembrar</title>
-  <meta name="description" content="AnoteAI é um aplicativo desktop local para organizar as notas curtas da sua vida — pessoas, lugares, eventos, projetos e ideias — conversando com a IA que você escolher." />
+  <title>AnoteAI — Anote, organize, lembre-se com IA</title>
+  <meta name="description" content="AnoteAI: notas locais com IA, grafo de conexões e lembretes. Plano gratuito com limites ou plano pago ilimitado." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230071E3'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23631724'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="top">
     <div class="wrap top-row">
-      <a class="brand" href="./">
+      <a class="brand" href="#inicio">
         <span class="brand-mark">A</span>
         <span>Anote<span class="brand-ai">AI</span></span>
       </a>
       <nav>
-        <a href="./#conta-google">Conta Google</a>
-        <a href="./#privacidade">Privacidade</a>
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="termos.html">Termos de Uso</a>
+        <a href="#inicio">Início</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#conta-google">Conta Google</a>
+        <a href="#planos">Planos</a>
+        <a href="privacidade.html">Privacidade</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Um lugar para lembrar</p>
+    <section class="hero" id="inicio">
+      <div class="wrap narrow">
+        <p class="eyebrow">Notas locais com IA</p>
         <h1>Anote<span class="brand-ai">AI</span></h1>
-        <p class="lead">
-          As notas curtas da sua vida — pessoas, lugares, eventos, projetos e ideias —
-          em um só lugar, ligadas num grafo. Você conversa, o AnoteAI guarda, lembra
-          e conecta tudo.
-        </p>
+        <p class="lead">Converse com a IA para criar notas, veja pessoas, lugares e eventos conectados num grafo e nunca perca um prazo com lembretes derivados das suas próprias datas. Tudo fica no seu computador.</p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">Ver o projeto no GitHub</a>
-          <a class="button ghost" href="./#conta-google">Como usamos sua conta Google</a>
+          <a class="button primary" href="#planos">Começar grátis</a>
+          <a class="button ghost" href="#recursos">Ver todos os recursos</a>
         </div>
-        <p class="hero-note">Aplicativo desktop para Linux, macOS e Windows · Tauri v2 (Rust + React)</p>
+        <p class="hero-note">Disponível para Linux, macOS e Windows · Site navegável em celulares · Sem telemetria · Suas notas ficam no seu computador</p>
       </div>
     </section>
 
-    <section class="features">
-      <div class="wrap grid">
-        <article class="card">
-          <h2>Anote conversando</h2>
-          <p>Diga à IA o que quer lembrar — “a consulta da Ana é dia 30”. Ela cria a nota, guarda os campos e liga com o que já existe.</p>
-        </article>
-        <article class="card">
-          <h2>Tudo ligado num grafo</h2>
-          <p>Pessoas, lugares e eventos aparecem como nós conectados. Busque, clique e navegue pelas relações das suas notas.</p>
-        </article>
-        <article class="card">
-          <h2>Lembretes que nascem das notas</h2>
-          <p>Datas nas notas viram lembretes: atrasados, hoje, esta semana e aniversários que voltam todo ano — na sua Agenda do Google também.</p>
-        </article>
-        <article class="card">
-          <h2>Só seu</h2>
-          <p>As notas ficam numa pasta do seu computador, em YAML, com histórico e cópias de segurança. Sem telemetria, sem anúncios.</p>
-        </article>
-        <article class="card">
-          <h2>Com a IA que você escolher</h2>
-          <p>OpenAI, Anthropic, Gemini, OpenRouter, NVIDIA ou um modelo local (Ollama, LM Studio) para privacidade total.</p>
-        </article>
-        <article class="card">
-          <h2>Cópia de segurança no Drive</h2>
-          <p>Com a conta Google conectada, um zip das suas notas é guardado na sua própria pasta “AnoteAI” do Google Drive.</p>
-        </article>
+    <section class="features" id="recursos">
+      <div class="wrap">
+        <h2 class="section-subtitle">Funcionalidades</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Anotar conversando</h3>
+            <p>Diga à IA o que guardar — "a consulta da Ana é dia 30". Ela cria a nota, preenche os campos e liga com o que já existe.</p>
+          </article>
+          <article class="card">
+            <h3>Grafo de conexões</h3>
+            <p>Pessoas, lugares e eventos viram nós conectados. Busque, clique e navegue pelas relações das suas notas.</p>
+          </article>
+          <article class="card">
+            <h3>Lembretes inteligentes</h3>
+            <p>Datas nas notas viram lembretes: atrasados, hoje, esta semana e aniversários que se repetem todo ano.</p>
+          </article>
+          <article class="card">
+            <h3>Conta Google (no app)</h3>
+            <p>Backup zip no Google Drive, eventos na Agenda e importação de contatos via OAuth 2.0 (PKCE). O acesso pode ser revogado quando quiser.</p>
+          </article>
+          <article class="card">
+            <h3>Seu provedor de IA</h3>
+            <p>Escolha entre OpenAI, Anthropic, Google Gemini, OpenRouter, NVIDIA ou rode local com Ollama/LM Studio. Nada sai do computador com modelos locais.</p>
+          </article>
+          <article class="card">
+            <h3>Local-first, sem rastreadores</h3>
+            <p>Notas em arquivos YAML numa pasta do seu computador, sem servidores, sem telemetria, sem conta AnoteAI e sem sincronização na nuvem.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="google" id="conta-google">
+    <section class="conta-google" id="conta-google">
       <div class="wrap narrow">
-        <h2>Por que pedimos sua conta Google</h2>
-        <p>
-          O login com a conta Google é <strong>obrigatório</strong> para usar o AnoteAI.
-          É ele que habilita a cópia de segurança no Drive, os lembretes na sua Agenda
-          e a importação dos seus contatos. O login acontece no navegador do seu sistema,
-          com o fluxo oficial do Google (OAuth 2.0 com PKCE).
-        </p>
-        <ul class="scopes">
-          <li><strong>Perfil básico</strong> (openid, email, perfil) — para mostrar quem está conectado.</li>
-          <li><strong>Drive (arquivos criados pelo app)</strong> — guardar e restaurar as cópias de segurança das suas notas. O app só enxerga os arquivos que ele mesmo criou no seu Drive.</li>
-          <li><strong>Agenda (eventos)</strong> — criar e atualizar eventos a partir dos lembretes das suas notas, e mostrar os próximos compromissos no painel do app.</li>
-          <li><strong>Contatos (somente leitura)</strong> — importar contatos que você escolher como notas de pessoas.</li>
+        <h2 class="section-subtitle">Sua conta Google</h2>
+        <p>O AnoteAI faz login com o Google (OAuth 2.0 com PKCE) e esse login é obrigatório para usar o aplicativo. O aplicativo nunca vê nem armazena sua senha. Os escopos solicitados e o uso de cada um:</p>
+        <ul>
+          <li><strong>Perfil básico</strong> — nome, e-mail e foto da conta conectada, mostrados dentro do aplicativo.</li>
+          <li><strong>Google Drive</strong> — criar, listar e baixar os zips de backup das suas notas numa pasta "AnoteAI" do <em>seu</em> Drive; o aplicativo acessa apenas os arquivos que ele mesmo criou.</li>
+          <li><strong>Agenda do Google</strong> — criar eventos de lembrete a partir das suas notas e listar próximos eventos no painel do aplicativo.</li>
+          <li><strong>Contatos</strong> — ler a lista apenas para importar os contatos que você selecionar em notas locais.</li>
         </ul>
-        <p>
-          O AnoteAI só fala com o Google quando você usa uma dessas funções. O token de
-          renovação fica no chaveiro do sistema do seu computador — nunca em servidores
-          nossos (não existem servidores nossos). Você pode revogar o acesso quando quiser
-          em <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>
-          ou clicando em “Sair da conta” dentro do app.
-        </p>
+        <p class="revogar">O acesso pode ser revogado a qualquer momento em <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a> ou dentro do aplicativo.</p>
       </div>
     </section>
 
-    <section class="privacy-strip" id="privacidade">
+    <section class="priv-resumo" id="privacidade">
       <div class="wrap narrow">
-        <h2>Privacidade em primeiro lugar</h2>
-        <p>
-          Suas notas vivem no seu computador, não na nuvem de ninguém. Nada é enviado
-          sem uma ação sua: nem telemetria, nem análise de uso, nem propaganda.
-          Ao conversar com a IA, apenas o conteúdo necessário da conversa vai para o
-          provedor que você escolheu — e você pode usar um modelo local para que nada
-          saia do computador.
-        </p>
-        <p><a class="button ghost" href="privacidade.html">Ler a Política de Privacidade</a></p>
+        <h2 class="section-subtitle">Privacidade resumida</h2>
+        <p>Suas notas ficam no seu computador. Não há servidores do AnoteAI, não há telemetria e nenhum dado sai do seu aparelho sem você usar uma função que dependa disso (IA, Google ou o provedor escolhido). Leia a política completa abaixo.</p>
+        <a class="button ghost" href="privacidade.html">Ler Política de Privacidade</a>
+      </div>
+    </section>
+
+    <section class="planos" id="planos">
+      <div class="wrap">
+        <h2 class="section-subtitle">Planos</h2>
+        <p class="planos-intro">Dois planos, sem pegadinha. Os preços abaixo são estimativas (mockup); os botões são ilustrativos e não cobram nada.</p>
+        <div class="planos-grid">
+          <!-- Plano Grátis -->
+          <article class="plano-card free">
+            <h3>Grátis</h3>
+            <p class="preco"><span class="valor">R$ 0</span> / mês</p>
+            <ul class="plano-lista">
+              <li><span class="marca"></span>Anotar conversando com IA</li>
+              <li><span class="marca"></span>Grafo de conexões básico</li>
+              <li><span class="marca"></span>Lembretes de datas (atrasados, hoje, semana)</li>
+              <li><span class="marca"></span>Limite de mensagens de IA por mês (mockup)</li>
+              <li><span class="marca"></span>Backup no Google Drive apenas quando solicitado (manual)</li>
+              <li><span class="marca"></span>Sem suporte prioritário</li>
+            </ul>
+            <a class="button primary full-width" href="https://github.com/YuriAlvesBordin/AnoteAI" rel="noopener">Começar grátis — baixar o app</a>
+            <p class="plano-rodape">Limites honestos para uso leve. Sem cartão de crédito.</p>
+          </article>
+
+          <!-- Plano Pago -->
+          <article class="plano-card pago">
+            <span class="plano-badge">Plano pago</span>
+            <h3>Pago</h3>
+            <p class="preco"><span class="valor">R$ 19</span> / mês</p>
+            <ul class="plano-lista">
+              <li><span class="marca"></span>Mensagens de IA ilimitadas</li>
+              <li><span class="marca"></span>Todos os provedores de IA (OpenAI, Anthropic, Gemini, OpenRouter, NVIDIA, Ollama, LM Studio)</li>
+              <li><span class="marca"></span>Backup agendado no Google Drive</li>
+              <li><span class="marca"></span>Lembretes na Agenda do Google</li>
+              <li><span class="marca"></span>Suporte prioritário</li>
+            </ul>
+            <a class="button primary full-width" href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">Assinar — falar com a gente</a>
+            <p class="plano-rodape">Preço mockup — o site não processa pagamento.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -117,7 +140,7 @@
       <span>
         <a href="privacidade.html">Política de Privacidade</a> ·
         <a href="termos.html">Termos de Uso</a> ·
-        <a href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">Contato</a>
+        <a href="https://github.com/YuriAlvesBordin/AnoteAI/issues" rel="noopener">Contato (issues)</a>
       </span>
     </div>
   </footer>
